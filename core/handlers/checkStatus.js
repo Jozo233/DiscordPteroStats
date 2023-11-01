@@ -14,4 +14,16 @@ module.exports = function checkStatus(client){
     console.log(chalk.magenta('[DiscordPteroStats]') + chalk.green(' Getting nodes stats'))
 
 
+    const panelStats = new Promise((resovle, reject) => {
+        axios(config.panel.url + '/api/application/users', {
+            method: 'get',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + config.panel.key
+            }
+        })
+    })
+
+
 }
