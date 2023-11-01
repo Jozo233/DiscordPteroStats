@@ -4,7 +4,8 @@ const yaml = require('js-yaml');
 const chalk = require('chalk');
 const fs = require('fs');
 const { Client, GatewayIntentBits } = require('discord.js');
-const config = yaml.load(fs.readFileSync('./config/config.yml', 'utf8'));
+
+const config = require("./config/config.json")
 
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds]  });
